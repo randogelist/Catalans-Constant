@@ -11,7 +11,7 @@ The theorem and its successor equivalence are proved in Lean for the actual Cata
 ```math
 \boxed{
 \begin{gathered}
-\operatorname{Nonempty}(\mathrm{CatalanSuccessor})
+\mathrm{Nonempty}(\mathrm{CatalanSuccessor})
 \;\Longleftrightarrow\;
 \mathcal{E}_G
 \\[6pt]
@@ -29,7 +29,7 @@ Here $\mathcal{E}_G$ denotes **arithmetic exhaustion**, with the exact premise
 \mathcal{E}_G \;:\Longleftrightarrow\;&
 \forall d\in\mathbb{N}_{>0},\\
 &\exists k\in\mathbb{N},\ B\in\mathbb{Z},\ q\in\mathbb{N}_{>0}:\\
-&\operatorname{IntegerWindow}(k,B,q,d).
+&\mathrm{IntegerWindow}(k,B,q,d).
 \end{aligned}
 ```
 
@@ -63,7 +63,7 @@ The **series, Hurwitz-zeta, and unit-square identifications are formalized in th
 The proved Euler recurrence encloses the actual constant between rational bounds. The finite checker has the following proved guarantee for $B\in\mathbb{Z}$ and $q,d\in\mathbb{N}_{>0}$:
 
 ```math
-\operatorname{IntegerWindow}(k,B,q,d)
+\mathrm{IntegerWindow}(k,B,q,d)
 \quad\Longrightarrow\quad
 0<B-qG<\frac{1}{d}.
 ```
@@ -77,7 +77,7 @@ The saved certificate proves the unconditional finite exclusion:
 ```math
 \boxed{
 \forall r\in\mathbb{Q},\qquad
-\operatorname{den}(r)\le 10^{500}
+\mathrm{den}(r)\le 10^{500}
 \;\Longrightarrow\;
 r\ne G
 }
