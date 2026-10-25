@@ -1,23 +1,60 @@
 # Catalan’s Constant
 
-**Conditional formal closure · Lean 4.33.0**
-
 [![Lean CI](https://github.com/randogelist/Catalans-Constant/actions/workflows/lean.yml/badge.svg)](https://github.com/randogelist/Catalans-Constant/actions/workflows/lean.yml)
 
-> **Main result**
->
-> If finite integer-window certificates exist for every positive denominator scope, then Catalan’s constant is irrational.
+## Eight identifications of $G$
 
-Lean also proves that this **arithmetic exhaustion** condition is equivalent to the existence of a Catalan successor that preserves admission and doubles the scope.
+Catalan’s constant has the following equivalent representations.
 
-**The universal existence condition remains open.** The formal closure is conditional on that premise.
-
-### What is verified
-
-| Result | Status |
+| Form | Identity |
 | :--- | :--- |
-| Conditional closure for the actual Catalan constant | Proved in Lean |
-| Rational denominator exclusion through $10^{500}$ | Proved unconditionally |
-| Universal arithmetic exhaustion | Open |
+| Alternating series | $\displaystyle G=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}$ |
+| Dirichlet beta | $\displaystyle G=\beta(2)$ |
+| Hurwitz zeta | $\displaystyle G=\frac{\zeta(2,\frac14)-\zeta(2,\frac34)}{16}$ |
+| Trigamma | $\displaystyle G=\frac{\psi_1(\frac14)-\psi_1(\frac34)}{16}$ |
+| Inverse tangent integral | $\displaystyle G=\int_0^1\frac{\arctan t}{t}\,dt$ |
+| Logarithmic integral | $\displaystyle G=-\int_0^1\frac{\log t}{1+t^2}\,dt$ |
+| Trigonometric integral | $\displaystyle G=-\int_0^{\pi/4}\log(\tan t)\,dt$ |
+| Unit-square integral | $\displaystyle G=\int_0^1\int_0^1\frac{1}{1+x^2y^2}\,dy\,dx$ |
 
-[**Exact statement**](docs/RESULT.md) · [**Lean proof**](CatalanAnchor/ArithmeticClosure.lean) · [**CI and axiom audit**](docs/VERIFICATION.md)
+Here $\beta$ is the Dirichlet beta function, $\zeta(s,a)$ the Hurwitz zeta function, and $\psi_1$ the trigamma function. The arctangent integrand has continuous value $1$ at zero; the logarithmic integrals are convergent improper integrals.
+
+The **series, Hurwitz-zeta, and unit-square identifications are formalized in this repository**. The other identities give classical context; references appear below.
+
+## Approach
+
+The proved Euler recurrence encloses the actual constant between rational bounds. A finite checker then verifies integers $B\in\mathbb{Z}$ and $q,d\in\mathbb{N}_{>0}$ satisfying
+
+```math
+0<B-qG<\frac1d.
+```
+
+A successor that preserves admission and at least doubles $d$ produces arbitrarily small positive integer linear forms. If $G=a/b$ were rational with $b>0$, multiplying these forms by $b$ would eventually give a positive integer smaller than $1$.
+
+## Conditional formal closure on $G\notin\mathbb{Q}$
+
+Lean proves:
+
+```math
+\mathrm{ArithmeticExhaustion}\;\Longrightarrow\;G\notin\mathbb{Q}.
+```
+
+**Arithmetic exhaustion** means that a finite integer-window certificate exists for **every positive scope** $d$. Lean also proves that this condition is equivalent to the existence of an admission-preserving, scope-doubling Catalan successor.
+
+**The universal existence premise remains open.** The implication and equivalence are proved; unconditional irrationality is not claimed.
+
+Separately, the saved certificate proves unconditionally that every rational with reduced denominator at most $10^{500}$ differs from $G$.
+
+[**Exact theorem**](docs/RESULT.md) · [**Lean proof**](CatalanAnchor/ArithmeticClosure.lean) · [**CI and axiom audit**](docs/VERIFICATION.md)
+
+Lean 4.33.0 · pinned Mathlib · 24 Lean files · 88 audited declarations.
+
+<details>
+<summary>Identity references</summary>
+
+- [NIST DLMF: Hurwitz-zeta series](https://dlmf.nist.gov/25.11.E1) and [Dirichlet L-series](https://dlmf.nist.gov/25.15.E1). Splitting the Catalan series into the two odd residue classes gives the Hurwitz identity; $\beta(s)=L(s,\chi_4)$.
+- [NIST: trigamma series](https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/trigamma.htm), giving $\psi_1(a)=\zeta(2,a)$ for $a>0$.
+- [Inverse tangent integral, equations (1)–(2)](https://arxiv.org/html/2605.01830v1#S1). Integration by parts gives the logarithmic integral, and $t=\tan\theta$ gives the trigonometric integral.
+- Repository proofs: [series](CatalanAnchor/Series.lean), [Hurwitz identification](CatalanAnchor/HurwitzBridge.lean), and [unit-square integral](CatalanAnchor/Integral.lean).
+
+</details>
