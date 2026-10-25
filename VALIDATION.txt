@@ -1,0 +1,37 @@
+PACKAGE=CATALAN_CLOSURE_REDUCTION_v0_2_0
+DATE=2026-10-23
+LEAN_VERSION=4.33.0
+LOCAL_PLATFORM=LINUX_X86_64
+COMPILED_MODULES_INCLUDING_AUDIT=24
+PACKAGE_BUILD=PASS
+FULL_BUILD_SECONDS=71.034
+SOURCE_TRUST_SCAN=PASS
+AUDITED_DECLARATIONS=88
+AXIOM_AUDIT=PASS
+AXIOMS=propext,Classical.choice,Quot.sound
+NATIVE_DECIDE=NOT_USED
+UNPROVED_DECLARATIONS=NOT_USED
+PROOF_PLACEHOLDERS=NOT_USED
+SUCCESSOR_IFF_COFINAL_ADMISSION=PROVED
+SUCCESSOR_IFF_ARITHMETIC_EXHAUSTION=PROVED
+LOCK_IFF_ARITHMETIC_EXHAUSTION=PROVED
+INTEGER_CHECK_NATIVE_CATALAN_SOUNDNESS=PROVED
+SEED_COVERS_ALL_SMALLER_POSITIVE_SCOPES=PROVED
+ARITHMETIC_EXHAUSTION=NOT_PROVED
+SUCCESSOR_FROM_EXHAUSTION=PROVED_CONDITIONALLY
+RIESZ_LOCK=NOT_CONSTRUCTED
+UNCONDITIONAL_CATALAN_IRRATIONALITY=NOT_CLAIMED
+WINDOWS_RUNNER=INHERITED_AND_EXTENDED
+NEW_WINDOWS_EXECUTION=NOT_PERFORMED_HERE
+COMPILED_OBJECTS_SHIPPED=NO
+
+Runtime compatibility note: the local environment permits the self executable
+lookup but rejects the numeric-PID variant Lean uses. A local loader shim
+supplied the actual compiler path for that single self lookup. Lean arithmetic,
+proof elaboration, kernel validation, and imported proof objects were unchanged.
+The shim is not needed by, and is not included in, the native Windows package.
+
+The previous version passed native Windows according to the user's supplied log.
+This version was rebuilt on Linux with Lean 4.33.0 and the existing Mathlib cache.
+Its new statements were also independently reviewed for the placement of their
+universal existence assumptions. This review is supplementary to kernel checks.

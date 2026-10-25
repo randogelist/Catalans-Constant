@@ -1,0 +1,220 @@
+CatalanAnchor.CATALAN_HURWITZ_IDENTIFIED : CatalanAnchor.nativeComplex = ↑CatalanAnchor.catalan
+CatalanAnchor.CATALAN_NATIVE_IDENTIFIED : CatalanAnchor.nativeCatalan = CatalanAnchor.catalan
+CatalanAnchor.partialSum_error_bound (n : ℕ) :
+  |CatalanAnchor.catalan - CatalanAnchor.partialSum n| ≤ 1 / (2 * ↑n + 1) ^ 2
+CatalanAnchor.INTEGER_LINEAR_FORM_DENOMINATOR_SCOPE (x : ℝ) (A B : ℤ) (d : ℕ) (hd : 1 ≤ d) (hpositive : 0 < ↑A * x + ↑B)
+  (hsmall : ↑A * x + ↑B < 1 / ↑d) (q : ℚ) : q.den ≤ d → ↑q ≠ x
+CatalanAnchor.NATIVE_CATALAN_IRRATIONAL_OF_WITNESS (W : CatalanAnchor.IntegerLinearFormsWitness CatalanAnchor.catalan) :
+  Irrational CatalanAnchor.nativeCatalan
+CatalanAnchor.CATALAN_DOUBLE_INTEGRAL_IDENTIFIED :
+  CatalanAnchor.catalan = ∫ (x : ℝ) (y : ℝ) in 0..1, 1 / (1 + (x * y) ^ 2)
+CatalanAnchor.NATIVE_CATALAN_FINITE_SCOPE_TEN (q : ℚ) : q.den ≤ 10 → ↑q ≠ CatalanAnchor.nativeCatalan
+'CatalanAnchor.term_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.hasSum_catalan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.CATALAN_SERIES_IDENTIFIED' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.CATALAN_HURWITZ_IDENTIFIED' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.CATALAN_NATIVE_IDENTIFIED' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.magnitude_antitone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.magnitude_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.partialSum_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.partialSum_even_le_catalan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.catalan_le_partialSum_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.partialSum_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.eight_ninths_lt_catalan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.catalan_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.catalan_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.catalan_finite_enclosure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.NO_POSITIVE_SMALL_INTEGER_MULTIPLES' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.IRRATIONAL_OF_INTEGER_LINEAR_FORMS' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.INTEGER_LINEAR_FORM_DENOMINATOR_SCOPE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.IntegerLinearFormsWitness.irrational' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.CATALAN_DENOMINATOR_SCOPE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.NATIVE_CATALAN_DENOMINATOR_SCOPE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.CATALAN_IRRATIONAL_OF_WITNESS' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.NATIVE_CATALAN_IRRATIONAL_OF_WITNESS' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.squareIntegral_monomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.CATALAN_DOUBLE_INTEGRAL_IDENTIFIED' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.NATIVE_CATALAN_FINITE_SCOPE_TEN' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.CATALAN_INTERVAL_1000 : CatalanAnchor.Certificate1000.Interval
+CatalanAnchor.CATALAN_LINEAR_FORM_1000 :
+  0 < ↑CatalanAnchor.Certificate1000.A * CatalanAnchor.catalan + ↑CatalanAnchor.Certificate1000.B ∧
+    ↑CatalanAnchor.Certificate1000.A * CatalanAnchor.catalan + ↑CatalanAnchor.Certificate1000.B <
+      1 / ↑CatalanAnchor.Certificate1000.bound
+CatalanAnchor.CATALAN_FINITE_SCOPE_1000 (q : ℚ) :
+  q.den ≤ CatalanAnchor.Certificate1000.bound → ↑q ≠ CatalanAnchor.catalan
+CatalanAnchor.NATIVE_CATALAN_FINITE_SCOPE_1000 (q : ℚ) :
+  q.den ≤ CatalanAnchor.Certificate1000.bound → ↑q ≠ CatalanAnchor.nativeCatalan
+CatalanAnchor.NATIVE_CATALAN_FINITE_SCOPE_10_POW_500 (q : ℚ) (hq : q.den ≤ 10 ^ 500) : ↑q ≠ CatalanAnchor.nativeCatalan
+'CatalanAnchor.eulerA_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.eulerU_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.eulerA_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.eulerU_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.euler_partial_le_catalan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.catalan_le_euler_partial_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.eulerU_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.eulerA_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.EulerFixedPoint.nat_div_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.EulerFixedPoint.recurrence_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.EulerFixedPoint.sum_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.EulerFixedPoint.scaled_enclosure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.interval_form_check_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.interval_form_denominator_scope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.Certificate1000.checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.Certificate1000.bound_decimal_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.EulerComputed.state_checked' depends on axioms: [propext]
+'CatalanAnchor.EulerComputed.tail_checked' depends on axioms: [propext]
+'CatalanAnchor.EulerComputed.lower_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.EulerComputed.upper_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.euler_computed_scaled_enclosure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.CATALAN_INTERVAL_1000' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.CATALAN_LINEAR_FORM_1000' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.CATALAN_FINITE_SCOPE_1000' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.NATIVE_CATALAN_FINITE_SCOPE_1000' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.NATIVE_CATALAN_FINITE_SCOPE_10_POW_500' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.EulerUniform.scaled_enclosure (p : ℕ) :
+  ↑(CatalanAnchor.EulerUniform.lower p) ≤ ↑(CatalanAnchor.EulerUniform.workScale p) * CatalanAnchor.catalan ∧
+    ↑(CatalanAnchor.EulerUniform.workScale p) * CatalanAnchor.catalan ≤ ↑(CatalanAnchor.EulerUniform.upper p)
+CatalanAnchor.RieszAdmission.seed_checks (next : GPBKQRXY.Riesz.Coordinates 3 → GPBKQRXY.Riesz.Coordinates 3) :
+  GPBKQRXY.Riesz.check (CatalanAnchor.RieszAdmission.system next) CatalanAnchor.RieszAdmission.seed = true
+CatalanAnchor.RieszAdmission.seed_admissible (next : GPBKQRXY.Riesz.Coordinates 3 → GPBKQRXY.Riesz.Coordinates 3) :
+  GPBKQRXY.Riesz.Admissible (CatalanAnchor.RieszAdmission.system next) CatalanAnchor.RieszAdmission.seed
+CatalanAnchor.RieszAdmission.linear_laws (next : GPBKQRXY.Riesz.Coordinates 3 → GPBKQRXY.Riesz.Coordinates 3) :
+  GPBKQRXY.Riesz.LinearLaws (-CatalanAnchor.catalan) (CatalanAnchor.RieszAdmission.system next)
+    CatalanAnchor.RieszAdmission.readout
+CatalanAnchor.RieszAdmission.representative (next : GPBKQRXY.Riesz.Coordinates 3 → GPBKQRXY.Riesz.Coordinates 3)
+  (L : GPBKQRXY.Riesz.LockLaws (CatalanAnchor.RieszAdmission.system next)) :
+  GPBKQRXY.Riesz.AnalyticRepresentative (-CatalanAnchor.catalan)
+CatalanAnchor.RieszAdmission.seed_coordinate_admission
+  (next : GPBKQRXY.Riesz.Coordinates 3 → GPBKQRXY.Riesz.Coordinates 3)
+  (L : GPBKQRXY.Riesz.LockLaws (CatalanAnchor.RieszAdmission.system next)) :
+  GPBKQRXY.Riesz.CoordinateAdmission (CatalanAnchor.RieszAdmission.representative next L)
+CatalanAnchor.RieszAdmission.CATALAN_IRRATIONAL_OF_LOCK
+  (next : GPBKQRXY.Riesz.Coordinates 3 → GPBKQRXY.Riesz.Coordinates 3)
+  (L : GPBKQRXY.Riesz.LockLaws (CatalanAnchor.RieszAdmission.system next)) : Irrational CatalanAnchor.catalan
+CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_SUCCESSOR
+  (T : CatalanAnchor.RieszAdmission.CatalanSuccessor) : Irrational CatalanAnchor.nativeCatalan
+'CatalanAnchor.EulerUniform.scaled_enclosure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.RieszAdmission.seed_checks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.RieszAdmission.seed_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.RieszAdmission.linear_laws' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.RieszAdmission.representative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.RieszAdmission.seed_coordinate_admission' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.RieszAdmission.CATALAN_IRRATIONAL_OF_LOCK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_SUCCESSOR' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CatalanAnchor.RieszAdmission.CatalanSuccessor.lockLaws' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GPBKQRXY.Riesz.IRRATIONAL_OF_LINEAR_LOCK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GPBKQRXY.Riesz.IRRATIONAL_OF_VERIFIED_COORDINATE' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.scope_lt_workScale_of_admissible
+  (next : GPBKQRXY.Riesz.Coordinates 3 → GPBKQRXY.Riesz.Coordinates 3) {c : GPBKQRXY.Riesz.Coordinates 3}
+  (hc : GPBKQRXY.Riesz.Admissible (CatalanAnchor.RieszAdmission.system next) c) :
+  CatalanAnchor.RieszAdmission.scope c < CatalanAnchor.EulerUniform.workScale c.stage
+'CatalanAnchor.RieszAdmission.scope_lt_workScale_of_admissible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+CatalanAnchor.RieszAdmission.no_lock_of_bounded_precision
+  (next : GPBKQRXY.Riesz.Coordinates 3 → GPBKQRXY.Riesz.Coordinates 3) (c : GPBKQRXY.Riesz.Coordinates 3)
+  (hc : GPBKQRXY.Riesz.Admissible (CatalanAnchor.RieszAdmission.system next) c) (P : ℕ)
+  (hstage : ∀ (n : ℕ), (GPBKQRXY.Riesz.orbit (CatalanAnchor.RieszAdmission.system next) c n).stage ≤ P) :
+  ¬GPBKQRXY.Riesz.LockLaws (CatalanAnchor.RieszAdmission.system next)
+'CatalanAnchor.RieszAdmission.no_lock_of_bounded_precision' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.precision_unbounded_of_lock
+  (next : GPBKQRXY.Riesz.Coordinates 3 → GPBKQRXY.Riesz.Coordinates 3)
+  (L : GPBKQRXY.Riesz.LockLaws (CatalanAnchor.RieszAdmission.system next)) (c : GPBKQRXY.Riesz.Coordinates 3)
+  (hc : GPBKQRXY.Riesz.Admissible (CatalanAnchor.RieszAdmission.system next) c) (P : ℕ) :
+  ∃ n, P < (GPBKQRXY.Riesz.orbit (CatalanAnchor.RieszAdmission.system next) c n).stage
+'CatalanAnchor.RieszAdmission.precision_unbounded_of_lock' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.no_lock_of_fixed_admissible
+  (next : GPBKQRXY.Riesz.Coordinates 3 → GPBKQRXY.Riesz.Coordinates 3) (c : GPBKQRXY.Riesz.Coordinates 3)
+  (hc : GPBKQRXY.Riesz.Admissible (CatalanAnchor.RieszAdmission.system next) c) (hnext : next c = c) :
+  ¬GPBKQRXY.Riesz.LockLaws (CatalanAnchor.RieszAdmission.system next)
+'CatalanAnchor.RieszAdmission.no_lock_of_fixed_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.identity_seed_checks :
+  GPBKQRXY.Riesz.check (CatalanAnchor.RieszAdmission.system id) CatalanAnchor.RieszAdmission.seed = true
+'CatalanAnchor.RieszAdmission.identity_seed_checks' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.identity_not_lock : ¬GPBKQRXY.Riesz.LockLaws (CatalanAnchor.RieszAdmission.system id)
+'CatalanAnchor.RieszAdmission.identity_not_lock' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.admissible_independent_of_next
+  (next₁ next₂ : GPBKQRXY.Riesz.Coordinates 3 → GPBKQRXY.Riesz.Coordinates 3) (c : GPBKQRXY.Riesz.Coordinates 3) :
+  GPBKQRXY.Riesz.Admissible (CatalanAnchor.RieszAdmission.system next₁) c ↔
+    GPBKQRXY.Riesz.Admissible (CatalanAnchor.RieszAdmission.system next₂) c
+'CatalanAnchor.RieszAdmission.admissible_independent_of_next' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.successorOfCofinal (h : CatalanAnchor.RieszAdmission.CofinalAdmission) :
+  CatalanAnchor.RieszAdmission.CatalanSuccessor
+'CatalanAnchor.RieszAdmission.successorOfCofinal' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.cofinal_of_lock (next : GPBKQRXY.Riesz.Coordinates 3 → GPBKQRXY.Riesz.Coordinates 3)
+  (L : GPBKQRXY.Riesz.LockLaws (CatalanAnchor.RieszAdmission.system next)) :
+  CatalanAnchor.RieszAdmission.CofinalAdmission
+'CatalanAnchor.RieszAdmission.cofinal_of_lock' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.successor_iff_cofinal :
+  Nonempty CatalanAnchor.RieszAdmission.CatalanSuccessor ↔ CatalanAnchor.RieszAdmission.CofinalAdmission
+'CatalanAnchor.RieszAdmission.successor_iff_cofinal' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.lock_iff_cofinal :
+  (∃ next, GPBKQRXY.Riesz.LockLaws (CatalanAnchor.RieszAdmission.system next)) ↔
+    CatalanAnchor.RieszAdmission.CofinalAdmission
+'CatalanAnchor.RieszAdmission.lock_iff_cofinal' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.cofinal_iff_checked :
+  CatalanAnchor.RieszAdmission.CofinalAdmission ↔ CatalanAnchor.RieszAdmission.CofinalCheckedAdmission
+'CatalanAnchor.RieszAdmission.cofinal_iff_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.successor_iff_checked :
+  Nonempty CatalanAnchor.RieszAdmission.CatalanSuccessor ↔ CatalanAnchor.RieszAdmission.CofinalCheckedAdmission
+'CatalanAnchor.RieszAdmission.successor_iff_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_COFINAL (h : CatalanAnchor.RieszAdmission.CofinalAdmission) :
+  Irrational CatalanAnchor.nativeCatalan
+'CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_COFINAL' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_COFINAL_CHECKS
+  (h : CatalanAnchor.RieszAdmission.CofinalCheckedAdmission) : Irrational CatalanAnchor.nativeCatalan
+'CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_COFINAL_CHECKS' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+CatalanAnchor.RieszAdmission.windowCoordinate_compatible_iff (k : ℕ) (B : ℤ) (q d : ℕ) :
+  CatalanAnchor.RieszAdmission.Compatible (CatalanAnchor.RieszAdmission.windowCoordinate k B q d) ↔
+    CatalanAnchor.RieszAdmission.IntegerWindow k B q d
+'CatalanAnchor.RieszAdmission.windowCoordinate_compatible_iff' depends on axioms: [propext, Quot.sound]
+CatalanAnchor.RieszAdmission.windowCoordinate_admissible (k : ℕ) (B : ℤ) (q d : ℕ)
+  (h : CatalanAnchor.RieszAdmission.IntegerWindow k B q d) :
+  GPBKQRXY.Riesz.Admissible (CatalanAnchor.RieszAdmission.system id)
+    (CatalanAnchor.RieszAdmission.windowCoordinate k B q d)
+'CatalanAnchor.RieszAdmission.windowCoordinate_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.compatible_integerWindow {c : GPBKQRXY.Riesz.Coordinates 3}
+  (h : CatalanAnchor.RieszAdmission.Compatible c) :
+  CatalanAnchor.RieszAdmission.IntegerWindow c.stage (CatalanAnchor.RieszAdmission.numerator c)
+    (CatalanAnchor.RieszAdmission.denominator c) (CatalanAnchor.RieszAdmission.scope c)
+'CatalanAnchor.RieszAdmission.compatible_integerWindow' depends on axioms: [propext, Quot.sound]
+CatalanAnchor.RieszAdmission.IntegerWindow.mono_scope {k : ℕ} {B : ℤ} {q d D : ℕ}
+  (h : CatalanAnchor.RieszAdmission.IntegerWindow k B q D) (hd : 0 < d) (hle : d ≤ D) :
+  CatalanAnchor.RieszAdmission.IntegerWindow k B q d
+'CatalanAnchor.RieszAdmission.IntegerWindow.mono_scope' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.arithmetic_exhaustion_iff_cofinal :
+  CatalanAnchor.RieszAdmission.ArithmeticExhaustion ↔ CatalanAnchor.RieszAdmission.CofinalAdmission
+'CatalanAnchor.RieszAdmission.arithmetic_exhaustion_iff_cofinal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+CatalanAnchor.RieszAdmission.successor_iff_arithmetic_exhaustion :
+  Nonempty CatalanAnchor.RieszAdmission.CatalanSuccessor ↔ CatalanAnchor.RieszAdmission.ArithmeticExhaustion
+'CatalanAnchor.RieszAdmission.successor_iff_arithmetic_exhaustion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+CatalanAnchor.RieszAdmission.lock_iff_arithmetic_exhaustion :
+  (∃ next, GPBKQRXY.Riesz.LockLaws (CatalanAnchor.RieszAdmission.system next)) ↔
+    CatalanAnchor.RieszAdmission.ArithmeticExhaustion
+'CatalanAnchor.RieszAdmission.lock_iff_arithmetic_exhaustion' depends on axioms: [propext, Classical.choice, Quot.sound]
+CatalanAnchor.RieszAdmission.integerWindow_native_linear_form {k : ℕ} {B : ℤ} {q d : ℕ}
+  (h : CatalanAnchor.RieszAdmission.IntegerWindow k B q d) :
+  0 < ↑B - ↑q * CatalanAnchor.nativeCatalan ∧ ↑B - ↑q * CatalanAnchor.nativeCatalan < 1 / ↑d
+'CatalanAnchor.RieszAdmission.integerWindow_native_linear_form' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_ARITHMETIC_EXHAUSTION
+  (h : CatalanAnchor.RieszAdmission.ArithmeticExhaustion) : Irrational CatalanAnchor.nativeCatalan
+'CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_ARITHMETIC_EXHAUSTION' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+CatalanAnchor.RieszAdmission.seed_covers_finite_scopes (d : ℕ) (hd : 0 < d)
+  (hle : d ≤ CatalanAnchor.Certificate1000.bound) :
+  CatalanAnchor.RieszAdmission.IntegerWindow 1000 CatalanAnchor.Certificate1000.B CatalanAnchor.Certificate1000.A.natAbs
+    d
+'CatalanAnchor.RieszAdmission.seed_covers_finite_scopes' depends on axioms: [propext, Classical.choice, Quot.sound]

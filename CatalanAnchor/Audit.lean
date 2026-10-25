@@ -1,0 +1,142 @@
+import CatalanAnchor
+
+#check CatalanAnchor.CATALAN_HURWITZ_IDENTIFIED
+#check CatalanAnchor.CATALAN_NATIVE_IDENTIFIED
+#check CatalanAnchor.partialSum_error_bound
+#check CatalanAnchor.INTEGER_LINEAR_FORM_DENOMINATOR_SCOPE
+#check CatalanAnchor.NATIVE_CATALAN_IRRATIONAL_OF_WITNESS
+#check CatalanAnchor.CATALAN_DOUBLE_INTEGRAL_IDENTIFIED
+#check CatalanAnchor.NATIVE_CATALAN_FINITE_SCOPE_TEN
+
+#print axioms CatalanAnchor.term_summable
+#print axioms CatalanAnchor.hasSum_catalan
+#print axioms CatalanAnchor.CATALAN_SERIES_IDENTIFIED
+#print axioms CatalanAnchor.CATALAN_HURWITZ_IDENTIFIED
+#print axioms CatalanAnchor.CATALAN_NATIVE_IDENTIFIED
+#print axioms CatalanAnchor.magnitude_antitone
+#print axioms CatalanAnchor.magnitude_summable
+#print axioms CatalanAnchor.partialSum_tendsto
+#print axioms CatalanAnchor.partialSum_even_le_catalan
+#print axioms CatalanAnchor.catalan_le_partialSum_odd
+#print axioms CatalanAnchor.partialSum_error_bound
+#print axioms CatalanAnchor.eight_ninths_lt_catalan
+#print axioms CatalanAnchor.catalan_lt_one
+#print axioms CatalanAnchor.catalan_pos
+#print axioms CatalanAnchor.catalan_finite_enclosure
+#print axioms CatalanAnchor.NO_POSITIVE_SMALL_INTEGER_MULTIPLES
+#print axioms CatalanAnchor.IRRATIONAL_OF_INTEGER_LINEAR_FORMS
+#print axioms CatalanAnchor.INTEGER_LINEAR_FORM_DENOMINATOR_SCOPE
+#print axioms CatalanAnchor.IntegerLinearFormsWitness.irrational
+#print axioms CatalanAnchor.CATALAN_DENOMINATOR_SCOPE
+#print axioms CatalanAnchor.NATIVE_CATALAN_DENOMINATOR_SCOPE
+#print axioms CatalanAnchor.CATALAN_IRRATIONAL_OF_WITNESS
+#print axioms CatalanAnchor.NATIVE_CATALAN_IRRATIONAL_OF_WITNESS
+#print axioms CatalanAnchor.squareIntegral_monomial
+#print axioms CatalanAnchor.CATALAN_DOUBLE_INTEGRAL_IDENTIFIED
+#print axioms CatalanAnchor.NATIVE_CATALAN_FINITE_SCOPE_TEN
+
+#check CatalanAnchor.CATALAN_INTERVAL_1000
+#check CatalanAnchor.CATALAN_LINEAR_FORM_1000
+#check CatalanAnchor.CATALAN_FINITE_SCOPE_1000
+#check CatalanAnchor.NATIVE_CATALAN_FINITE_SCOPE_1000
+#check CatalanAnchor.NATIVE_CATALAN_FINITE_SCOPE_10_POW_500
+
+#print axioms CatalanAnchor.eulerA_zero
+#print axioms CatalanAnchor.eulerU_zero
+#print axioms CatalanAnchor.eulerA_nonneg
+#print axioms CatalanAnchor.eulerU_nonneg
+#print axioms CatalanAnchor.euler_partial_le_catalan
+#print axioms CatalanAnchor.catalan_le_euler_partial_add
+#print axioms CatalanAnchor.eulerU_succ
+#print axioms CatalanAnchor.eulerA_succ
+#print axioms CatalanAnchor.EulerFixedPoint.nat_div_rounding
+#print axioms CatalanAnchor.EulerFixedPoint.recurrence_rounding
+#print axioms CatalanAnchor.EulerFixedPoint.sum_rounding
+#print axioms CatalanAnchor.EulerFixedPoint.scaled_enclosure
+#print axioms CatalanAnchor.interval_form_check_sound
+#print axioms CatalanAnchor.interval_form_denominator_scope
+#print axioms CatalanAnchor.Certificate1000.checked
+#print axioms CatalanAnchor.Certificate1000.bound_decimal_size
+#print axioms CatalanAnchor.EulerComputed.state_checked
+#print axioms CatalanAnchor.EulerComputed.tail_checked
+#print axioms CatalanAnchor.EulerComputed.lower_checked
+#print axioms CatalanAnchor.EulerComputed.upper_checked
+#print axioms CatalanAnchor.euler_computed_scaled_enclosure
+#print axioms CatalanAnchor.CATALAN_INTERVAL_1000
+#print axioms CatalanAnchor.CATALAN_LINEAR_FORM_1000
+#print axioms CatalanAnchor.CATALAN_FINITE_SCOPE_1000
+#print axioms CatalanAnchor.NATIVE_CATALAN_FINITE_SCOPE_1000
+#print axioms CatalanAnchor.NATIVE_CATALAN_FINITE_SCOPE_10_POW_500
+
+#check CatalanAnchor.EulerUniform.scaled_enclosure
+#check CatalanAnchor.RieszAdmission.seed_checks
+#check CatalanAnchor.RieszAdmission.seed_admissible
+#check CatalanAnchor.RieszAdmission.linear_laws
+#check CatalanAnchor.RieszAdmission.representative
+#check CatalanAnchor.RieszAdmission.seed_coordinate_admission
+#check CatalanAnchor.RieszAdmission.CATALAN_IRRATIONAL_OF_LOCK
+#check CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_SUCCESSOR
+
+#print axioms CatalanAnchor.EulerUniform.scaled_enclosure
+#print axioms CatalanAnchor.RieszAdmission.seed_checks
+#print axioms CatalanAnchor.RieszAdmission.seed_admissible
+#print axioms CatalanAnchor.RieszAdmission.linear_laws
+#print axioms CatalanAnchor.RieszAdmission.representative
+#print axioms CatalanAnchor.RieszAdmission.seed_coordinate_admission
+#print axioms CatalanAnchor.RieszAdmission.CATALAN_IRRATIONAL_OF_LOCK
+#print axioms CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_SUCCESSOR
+#print axioms CatalanAnchor.RieszAdmission.CatalanSuccessor.lockLaws
+#print axioms GPBKQRXY.Riesz.IRRATIONAL_OF_LINEAR_LOCK
+#print axioms GPBKQRXY.Riesz.IRRATIONAL_OF_VERIFIED_COORDINATE
+
+#check CatalanAnchor.RieszAdmission.scope_lt_workScale_of_admissible
+#print axioms CatalanAnchor.RieszAdmission.scope_lt_workScale_of_admissible
+#check CatalanAnchor.RieszAdmission.no_lock_of_bounded_precision
+#print axioms CatalanAnchor.RieszAdmission.no_lock_of_bounded_precision
+#check CatalanAnchor.RieszAdmission.precision_unbounded_of_lock
+#print axioms CatalanAnchor.RieszAdmission.precision_unbounded_of_lock
+#check CatalanAnchor.RieszAdmission.no_lock_of_fixed_admissible
+#print axioms CatalanAnchor.RieszAdmission.no_lock_of_fixed_admissible
+#check CatalanAnchor.RieszAdmission.identity_seed_checks
+#print axioms CatalanAnchor.RieszAdmission.identity_seed_checks
+#check CatalanAnchor.RieszAdmission.identity_not_lock
+#print axioms CatalanAnchor.RieszAdmission.identity_not_lock
+
+#check CatalanAnchor.RieszAdmission.admissible_independent_of_next
+#print axioms CatalanAnchor.RieszAdmission.admissible_independent_of_next
+#check CatalanAnchor.RieszAdmission.successorOfCofinal
+#print axioms CatalanAnchor.RieszAdmission.successorOfCofinal
+#check CatalanAnchor.RieszAdmission.cofinal_of_lock
+#print axioms CatalanAnchor.RieszAdmission.cofinal_of_lock
+#check CatalanAnchor.RieszAdmission.successor_iff_cofinal
+#print axioms CatalanAnchor.RieszAdmission.successor_iff_cofinal
+#check CatalanAnchor.RieszAdmission.lock_iff_cofinal
+#print axioms CatalanAnchor.RieszAdmission.lock_iff_cofinal
+#check CatalanAnchor.RieszAdmission.cofinal_iff_checked
+#print axioms CatalanAnchor.RieszAdmission.cofinal_iff_checked
+#check CatalanAnchor.RieszAdmission.successor_iff_checked
+#print axioms CatalanAnchor.RieszAdmission.successor_iff_checked
+#check CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_COFINAL
+#print axioms CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_COFINAL
+#check CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_COFINAL_CHECKS
+#print axioms CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_COFINAL_CHECKS
+#check CatalanAnchor.RieszAdmission.windowCoordinate_compatible_iff
+#print axioms CatalanAnchor.RieszAdmission.windowCoordinate_compatible_iff
+#check CatalanAnchor.RieszAdmission.windowCoordinate_admissible
+#print axioms CatalanAnchor.RieszAdmission.windowCoordinate_admissible
+#check CatalanAnchor.RieszAdmission.compatible_integerWindow
+#print axioms CatalanAnchor.RieszAdmission.compatible_integerWindow
+#check CatalanAnchor.RieszAdmission.IntegerWindow.mono_scope
+#print axioms CatalanAnchor.RieszAdmission.IntegerWindow.mono_scope
+#check CatalanAnchor.RieszAdmission.arithmetic_exhaustion_iff_cofinal
+#print axioms CatalanAnchor.RieszAdmission.arithmetic_exhaustion_iff_cofinal
+#check CatalanAnchor.RieszAdmission.successor_iff_arithmetic_exhaustion
+#print axioms CatalanAnchor.RieszAdmission.successor_iff_arithmetic_exhaustion
+#check CatalanAnchor.RieszAdmission.lock_iff_arithmetic_exhaustion
+#print axioms CatalanAnchor.RieszAdmission.lock_iff_arithmetic_exhaustion
+#check CatalanAnchor.RieszAdmission.integerWindow_native_linear_form
+#print axioms CatalanAnchor.RieszAdmission.integerWindow_native_linear_form
+#check CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_ARITHMETIC_EXHAUSTION
+#print axioms CatalanAnchor.RieszAdmission.NATIVE_CATALAN_IRRATIONAL_OF_ARITHMETIC_EXHAUSTION
+#check CatalanAnchor.RieszAdmission.seed_covers_finite_scopes
+#print axioms CatalanAnchor.RieszAdmission.seed_covers_finite_scopes

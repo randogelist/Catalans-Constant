@@ -1,0 +1,125 @@
+name: Lean CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lean-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  conditional-closure:
+    name: Conditional closure and axiom audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: bash
+    env:
+      MATHLIB_NO_CACHE_ON_UPDATE: '1'
+    steps:
+      - name: Check out sources
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+
+      - name: Validate audit tools and scan sources
+        run: |
+          mkdir -p logs
+          python3 ci/test_audit.py 2>&1 | tee logs/audit-tool-tests.txt
+          python3 ci/check_sources.py | tee logs/source-scan.txt
+
+      - name: Install pinned Lean 4.33.0
+        run: |
+          archive="$RUNNER_TEMP/lean-4.33.0-linux.tar.zst"
+          curl --fail --location --retry 3 \
+            https://github.com/leanprover/lean4/releases/download/v4.33.0/lean-4.33.0-linux.tar.zst \
+            --output "$archive"
+          echo "4b3fb03c29a1e0a253fb1d11f9bae3725f19a0dc6fc09b3ea16d2c9df3349e2c  $archive" | sha256sum --check
+          tar --use-compress-program=unzstd -xf "$archive" -C "$RUNNER_TEMP"
+          rm "$archive"
+          echo "$RUNNER_TEMP/lean-4.33.0-linux/bin" >> "$GITHUB_PATH"
+
+      - name: Restore compatible Lean and Mathlib artifacts
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: .lake
+          key: ${{ runner.os }}-catalan-lean433-v1-${{ hashFiles('lean-toolchain', 'lake-manifest.json', 'lakefile.lean') }}-${{ hashFiles('CatalanAnchor/**/*.lean', 'GPBKQRXY/**/*.lean', 'CatalanAnchor.lean', 'Main.lean') }}
+          restore-keys: |
+            ${{ runner.os }}-catalan-lean433-v1-${{ hashFiles('lean-toolchain', 'lake-manifest.json', 'lakefile.lean') }}-
+
+      - name: Fetch required Mathlib cache
+        run: |
+          mapfile -t imports < <(python3 - <<'PY'
+          from pathlib import Path
+          import re
+          roots = [Path('CatalanAnchor'), Path('GPBKQRXY')]
+          modules = set()
+          for root in roots:
+              for path in root.rglob('*.lean'):
+                  modules.update(re.findall(r'^import\s+(Mathlib[.\w]*)\s*$', path.read_text(), re.M))
+          for module in sorted(modules):
+              print(module)
+          PY
+          )
+          test "${#imports[@]}" -gt 0
+          lake exe cache get "${imports[@]}" 2>&1 | tee logs/mathlib-cache.txt
+          git diff --exit-code -- lean-toolchain lake-manifest.json
+          test "$(git -C .lake/packages/mathlib rev-parse HEAD)" = db584cd6d46c92f209a44c0f1c829460d327499d
+
+      - name: Record verification environment
+        run: |
+          {
+            echo "COMMIT=$GITHUB_SHA"
+            lean --version
+            lake --version
+            echo "MATHLIB=$(git -C .lake/packages/mathlib rev-parse HEAD)"
+            sha256sum lean-toolchain lake-manifest.json
+          } | tee logs/environment.txt
+          cp lake-manifest.json logs/lake-manifest.json
+
+      - name: Build all project modules
+        run: |
+          lake build 2>&1 | tee logs/lean-build.txt
+
+      - name: Audit all listed declarations
+        run: |
+          lake env lean CatalanAnchor/Audit.lean 2>&1 | tee logs/axiom-audit.txt
+          python3 ci/check_axioms.py logs/axiom-audit.txt | tee logs/axiom-audit-result.txt
+
+      - name: Record conditional result
+        run: |
+          cat > logs/result.txt <<'EOF'
+          PACKAGE_BUILD=PASS
+          AXIOM_AUDIT=PASS
+          CONDITIONAL_FORMAL_CLOSURE=VERIFIED
+          SUCCESSOR_IFF_ARITHMETIC_EXHAUSTION=PROVED
+          NATIVE_CATALAN_IRRATIONAL_OF_ARITHMETIC_EXHAUSTION=PROVED_CONDITIONALLY
+          NATIVE_CATALAN_FINITE_SCOPE_10_POW_500=PROVED
+          ARITHMETIC_EXHAUSTION=NOT_PROVED
+          RIESZ_LOCK=NOT_CONSTRUCTED
+          UNCONDITIONAL_CATALAN_IRRATIONALITY=NOT_CLAIMED
+          EOF
+          cat logs/result.txt
+          {
+            echo '## Conditional formal closure verified'
+            echo 'Lean built the sources and all 88 listed declarations passed the standard-axiom allowlist.'
+            echo 'The result is conditional on ArithmeticExhaustion: finite windows must exist for every positive scope.'
+            echo 'That universal premise remains unproved. Unconditional Catalan irrationality is not claimed.'
+            echo "Commit: $GITHUB_SHA"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload verification logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lean-closure-audit-${{ github.sha }}
+          path: logs/
+          if-no-files-found: error
+          retention-days: 30
