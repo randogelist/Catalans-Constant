@@ -2,6 +2,24 @@
 
 [![Lean CI](https://github.com/randogelist/Catalans-Constant/actions/workflows/lean.yml/badge.svg)](https://github.com/randogelist/Catalans-Constant/actions/workflows/lean.yml)
 
+## Main result
+
+**Conditional formal closure on $G\notin\mathbb{Q}$.**
+
+The complete implication is proved in Lean for the actual Catalan constant:
+
+```math
+\mathrm{ArithmeticExhaustion}\;\Longrightarrow\;G\notin\mathbb{Q}.
+```
+
+**Premise:** a finite integer-window certificate exists for **every positive denominator scope** $d$.
+
+Lean also proves that this arithmetic exhaustion condition is equivalent to the existence of a Catalan successor that preserves admission and at least doubles the scope.
+
+**The universal existence premise remains open.** The conditional theorem and the identification of the actual constant are proved; unconditional irrationality is not claimed.
+
+[**Exact theorem**](docs/RESULT.md) · [**Lean proof**](CatalanAnchor/ArithmeticClosure.lean) · [**CI and axiom audit**](docs/VERIFICATION.md)
+
 ## Eight identifications of $G$
 
 Catalan’s constant has the following equivalent representations.
@@ -31,21 +49,9 @@ The proved Euler recurrence encloses the actual constant between rational bounds
 
 A successor that preserves admission and at least doubles $d$ produces arbitrarily small positive integer linear forms. If $G=a/b$ were rational with $b>0$, multiplying these forms by $b$ would eventually give a positive integer smaller than $1$.
 
-## Conditional formal closure on $G\notin\mathbb{Q}$
+## Verified finite result
 
-Lean proves:
-
-```math
-\mathrm{ArithmeticExhaustion}\;\Longrightarrow\;G\notin\mathbb{Q}.
-```
-
-**Arithmetic exhaustion** means that a finite integer-window certificate exists for **every positive scope** $d$. Lean also proves that this condition is equivalent to the existence of an admission-preserving, scope-doubling Catalan successor.
-
-**The universal existence premise remains open.** The implication and equivalence are proved; unconditional irrationality is not claimed.
-
-Separately, the saved certificate proves unconditionally that every rational with reduced denominator at most $10^{500}$ differs from $G$.
-
-[**Exact theorem**](docs/RESULT.md) · [**Lean proof**](CatalanAnchor/ArithmeticClosure.lean) · [**CI and axiom audit**](docs/VERIFICATION.md)
+The saved certificate proves unconditionally that every rational with reduced denominator at most $10^{500}$ differs from $G$.
 
 Lean 4.33.0 · pinned Mathlib · 24 Lean files · 88 audited declarations.
 
