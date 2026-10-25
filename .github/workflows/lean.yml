@@ -35,6 +35,10 @@ jobs:
           python3 ci/test_audit.py 2>&1 | tee logs/audit-tool-tests.txt
           python3 ci/check_sources.py | tee logs/source-scan.txt
 
+      - name: Reconstruct the finite witness with exact arithmetic
+        run: |
+          python3 examples/reconstruct_witness.py 2>&1 | tee logs/witness-reconstruction.txt
+
       - name: Install pinned Lean 4.33.0
         run: |
           archive="$RUNNER_TEMP/lean-4.33.0-linux.tar.zst"
