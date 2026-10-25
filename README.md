@@ -6,15 +6,34 @@
 
 **Conditional formal closure on $G\notin\mathbb{Q}$.**
 
-The complete implication is proved in Lean for the actual Catalan constant:
+The theorem and its successor equivalence are proved in Lean for the actual Catalan constant:
 
 ```math
-\mathrm{ArithmeticExhaustion}\;\Longrightarrow\;G\notin\mathbb{Q}.
+\boxed{
+\begin{gathered}
+\operatorname{Nonempty}(\mathrm{CatalanSuccessor})
+\;\Longleftrightarrow\;
+\mathcal{E}_G
+\\[6pt]
+\mathcal{E}_G
+\;\Longrightarrow\;
+G\notin\mathbb{Q}
+\end{gathered}
+}
 ```
 
-**Premise:** a finite integer-window certificate exists for **every positive denominator scope** $d$.
+Here $\mathcal{E}_G$ denotes **arithmetic exhaustion**, with the exact premise
 
-Lean also proves that this arithmetic exhaustion condition is equivalent to the existence of a Catalan successor that preserves admission and at least doubles the scope.
+```math
+\begin{aligned}
+\mathcal{E}_G \;:\Longleftrightarrow\;&
+\forall d\in\mathbb{N}_{>0},\\
+&\exists k\in\mathbb{N},\ B\in\mathbb{Z},\ q\in\mathbb{N}_{>0}:\\
+&\operatorname{IntegerWindow}(k,B,q,d).
+\end{aligned}
+```
+
+Every positive scope must admit a finite certificate. The equivalent successor preserves admission and at least doubles the scope.
 
 **The universal existence premise remains open.** The conditional theorem and the identification of the actual constant are proved; unconditional irrationality is not claimed.
 
@@ -41,17 +60,28 @@ The **series, Hurwitz-zeta, and unit-square identifications are formalized in th
 
 ## Approach
 
-The proved Euler recurrence encloses the actual constant between rational bounds. A finite checker then verifies integers $B\in\mathbb{Z}$ and $q,d\in\mathbb{N}_{>0}$ satisfying
+The proved Euler recurrence encloses the actual constant between rational bounds. The finite checker has the following proved guarantee for $B\in\mathbb{Z}$ and $q,d\in\mathbb{N}_{>0}$:
 
 ```math
-0<B-qG<\frac1d.
+\operatorname{IntegerWindow}(k,B,q,d)
+\quad\Longrightarrow\quad
+0<B-qG<\frac{1}{d}.
 ```
 
 A successor that preserves admission and at least doubles $d$ produces arbitrarily small positive integer linear forms. If $G=a/b$ were rational with $b>0$, multiplying these forms by $b$ would eventually give a positive integer smaller than $1$.
 
 ## Verified finite result
 
-The saved certificate proves unconditionally that every rational with reduced denominator at most $10^{500}$ differs from $G$.
+The saved certificate proves the unconditional finite exclusion:
+
+```math
+\boxed{
+\forall r\in\mathbb{Q},\qquad
+\operatorname{den}(r)\le 10^{500}
+\;\Longrightarrow\;
+r\ne G
+}
+```
 
 Lean 4.33.0 · pinned Mathlib · 24 Lean files · 88 audited declarations.
 
